@@ -12,8 +12,8 @@
     }
   },
   "server": {
-    "port": 3000,
-    "siteUrl": "http://documentserver/",
+    "port": 6000,
+    "siteUrl": "https://twicer-is-coder-didactic-space-goldfish-wv69w9w9gp2gwqq-80.preview.app.github.dev/",
     "wopi": {
       "discovery": "hosting/discovery"
     },
@@ -37,12 +37,12 @@
       }
     ],
     "token": {
-        "enable": false,
+        "enable": true,
         "useforrequest": true,
         "algorithmRequest": "HS256",
         "authorizationHeader": "Authorization",
         "authorizationHeaderPrefix": "Bearer ",
-        "secret": "secret",
+        "secret": "CA8Jd8EaSTp9rBtLNaxW5Wv7zOBph2fg",
         "expiresIn": "5m"
     },
     "verify_peer_off": true,
