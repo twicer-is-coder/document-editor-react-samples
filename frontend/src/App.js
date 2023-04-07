@@ -76,7 +76,7 @@ function App() {
       <h1>Living Trust Editor</h1>
       {gettingToken ? <p>Getting token...</p> :
         <DocumentEditor
-          documentServerUrl="https://onlyoffice.twicegaming.com/"
+          documentServerUrl={CODESPACES_OO}
           config={ooConfig}
           id="docxEditor"
           events_onDocumentReady={onDocumentReady}

@@ -2,19 +2,15 @@ const express = require('express')
 const jwt = require('jsonwebtoken');
 const cors = require('cors')
 const app = express()
+
 const PORT = 5000
-const SECRET = "E5r0JOnqT08tPCeHCD5tibycukjpz68m"
+const OO_SECRET = "CA8Jd8EaSTp9rBtLNaxW5Wv7zOBph2fg"
 
 var fs = require("fs");
 var pathForSave = "test.docx";
 
 app.use(cors())
 app.use(express.json())
-
-app.get('/track', (req, res) => {
-    console.log("get track")
-    res.send('Hello World!')
-})
 
 app.post('/track', (req, res) => {
     console.log("post track", req.body)
@@ -23,9 +19,7 @@ app.post('/track', (req, res) => {
 })
 
 app.post("/oo-config", function (req, res) {
-
     console.log("Sign route.")
-
     const config = {
         "document": {
             "key": "Khirz6zTPdfd7",
@@ -39,10 +33,7 @@ app.post("/oo-config", function (req, res) {
         "height": "100%",
         "width": "100%",
     }
-
-    config.token = jwt.sign(config, SECRET);
-
-    console.log("send config", config)
+    config.token = jwt.sign(config, OO_SECRET);
     res.send(config);
 });
 
