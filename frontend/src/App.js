@@ -4,9 +4,14 @@ import { DocumentEditor } from "@onlyoffice/document-editor-react";
 import './App.css';
 import axios from 'axios';
 
+//DOCUMENT SERVER ON CODESPACES
 const CODESPACES_OO = "https://twicer-is-coder-didactic-space-goldfish-wv69w9w9gp2gwqq-80.preview.app.github.dev"
-const CODESPACES_SERVER = "https://twicer-is-coder-didactic-space-goldfish-wv69w9w9gp2gwqq-500.preview.app.github.dev"
+
+//DOCUMENT SERVER ON VULTR
 const VULTR_URL = "https://onlyoffice.twicegaming.com/"
+
+//BACKEND NODE.JS SERVER ON CODESPACES
+const CODESPACES_SERVER = "https://twicer-is-coder-didactic-space-goldfish-wv69w9w9gp2gwqq-5000.preview.app.github.dev"
 
 const oldconfig = {
   "document": {
@@ -28,11 +33,11 @@ function App() {
   const [gettingToken, setGettingToken] = useState(true);
   const [ooConfig, setOOConfig] = useState(null);
 
-  var onDocumentReady = function (event) {
+  const onDocumentReady = function (event) {
     console.log("Document is loaded", event);
   };
 
-  var onLoadComponentError = function (errorCode, errorDescription) {
+  const onLoadComponentError = function (errorCode, errorDescription) {
     switch (errorCode) {
       case -1: // Unknown error loading component
         console.log(errorDescription);
@@ -45,14 +50,17 @@ function App() {
       case -3: // DocsAPI is not defined
         console.log(errorDescription);
         break;
+      default:
+        console.log(errorDescription);
     }
   };
 
   const getOOConfig = async () => {
     try {
-      const response = await axios.post(`${CODESPACES_SERVER}/sign-oo-config`);
+      const response = await axios.post(`${CODESPACES_SERVER}/oo-config`);
       console.log("response", response);
       setGettingToken(false);
+      setOOConfig(response.data);
     } catch (error) {
       alert("Error getting token");
       console.log("Error getting token", error);

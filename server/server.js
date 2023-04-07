@@ -1,13 +1,14 @@
 const express = require('express')
-const app = express()
-const port = 5000
 const jwt = require('jsonwebtoken');
-
+const cors = require('cors')
+const app = express()
+const PORT = 5000
 const SECRET = "E5r0JOnqT08tPCeHCD5tibycukjpz68m"
 
 var fs = require("fs");
 var pathForSave = "test.docx";
 
+app.use(cors())
 app.use(express.json())
 
 app.get('/track', (req, res) => {
@@ -21,11 +22,9 @@ app.post('/track', (req, res) => {
     res.send({ "error": 0 })
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+app.post("/oo-config", function (req, res) {
 
-app.post("/sign-oo-config", function (req, res) {
+    console.log("Sign route.")
 
     const config = {
         "document": {
@@ -76,3 +75,7 @@ app.post("/tarack", function (req, res) {
         readbody(req, res, pathForSave)
     }
 });
+
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`)
+})
