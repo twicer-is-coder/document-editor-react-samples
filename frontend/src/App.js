@@ -5,13 +5,13 @@ import './App.css';
 import axios from 'axios';
 
 //DOCUMENT SERVER ON CODESPACES
-const CODESPACES_OO = "https://twicer-is-coder-didactic-space-goldfish-wv69w9w9gp2gwqq-80.preview.app.github.dev"
+const CODESPACES_OO = "https://8080-twiceriscod-documentedi-slm1iyotihi.ws-us94.gitpod.io"
 
 //DOCUMENT SERVER ON VULTR
 const VULTR_URL = "https://onlyoffice.twicegaming.com/"
 
 //BACKEND NODE.JS SERVER ON CODESPACES
-const CODESPACES_SERVER = "https://twicer-is-coder-didactic-space-goldfish-wv69w9w9gp2gwqq-5000.preview.app.github.dev"
+const CODESPACES_SERVER = "https://5000-twiceriscod-documentedi-slm1iyotihi.ws-us94.gitpod.io"
 
 const oldconfig = {
   "document": {
