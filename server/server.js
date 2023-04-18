@@ -143,7 +143,7 @@ app.post("/oo-config", function (req, res) {
     console.log("Sign route.")
     const config = {
         "document": {
-            "key": "saad-temp-doc",
+            "key": "saad-ttemp-doc",
             "url": "https://5000-twiceriscod-documentedi-slm1iyotihi.ws-us94.gitpod.io/alvin-doc.docx"
         },
         "editorConfig": {
@@ -156,6 +156,14 @@ app.post("/oo-config", function (req, res) {
                 "group": "Test Group",
                 "id": "0123456789",
                 "name": "Saad Nadeem"
+            },
+            "plugins": {
+                "autostart": [
+                    "asc.{8645D461-84BC-4FB0-A42C-98118C14A1CZ}",
+                ],
+                "pluginsData": [
+                    "https://5000-twiceriscod-documentedi-slm1iyotihi.ws-us94.gitpod.io/plugins/jitsi/config.json",
+                ]
             },
         },
         "documentType": "word",
